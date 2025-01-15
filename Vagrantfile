@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/focal64"
+  config.ssh.forward_agent = true
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -76,7 +77,7 @@ Vagrant.configure("2") do |config|
   # SHELL
   config.vm.define "controlplane" do |controlplane|
     controlplane.vm.hostname = "controlplane"
-    controlplane.vm.network "private_network", ip: "192.168.56.100"
+    controlplane.vm.network "private_network", ip: "192.168.56.101"
     controlplane.vm.provider "virtualbox" do |vb|
       vb.cpus = 2
       vb.memory = "4096"
@@ -85,7 +86,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "worker-1" do |worker1|
     worker1.vm.hostname = "worker-1"
-    worker1.vm.network "private_network", ip: "192.168.56.101"
+    worker1.vm.network "private_network", ip: "192.168.56.102"
     worker1.vm.provider "virtualbox" do |vb|
       vb.cpus = 1
       vb.memory = "2048"
@@ -94,7 +95,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "worker-2" do |worker2|
     worker2.vm.hostname = "worker-2"
-    worker2.vm.network "private_network", ip: "192.168.56.102"
+    worker2.vm.network "private_network", ip: "192.168.56.103"
     worker2.vm.provider "virtualbox" do |vb|
       vb.cpus = 1
       vb.memory = "2048"
