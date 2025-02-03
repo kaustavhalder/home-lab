@@ -9,7 +9,7 @@ def hello_world():
 
 
 @app.route('/health')
-def hello_world():
+def health():
     return "App is Healthy"
 
 
