@@ -4,8 +4,24 @@ metadata:
   name: nginx-app
   namespace: ckad-prep
 spec:
+  volumes:
+    - name: nginx-run
+      emptyDir: {}
+    - name: nginx-data
+      emptyDir: {}
+    - name: nginx-cache
+      emptyDir: {}
   containers:
     - name: nginx-app
-      image: nginx:latest
+      image: nginx
+      # securityContext:
+      #   readOnlyRootFileSystem: true
+      volumeMounts:
+        - mountPath: /var/run
+          name: nginx-run
+        - mountPath: /var/cache-nginx
+          name: nginx-cache
+        - mountPath: /usr/local/nginx
+          name: nginx-data
       ports:
         - containerPort: 80
