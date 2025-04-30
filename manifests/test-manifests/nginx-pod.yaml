@@ -14,8 +14,6 @@ spec:
   containers:
     - name: nginx-app
       image: nginx
-      # securityContext:
-      #   readOnlyRootFileSystem: true
       volumeMounts:
         - mountPath: /var/run
           name: nginx-run
