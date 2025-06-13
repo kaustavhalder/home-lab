@@ -1,3 +1,4 @@
+# this is for ephemeral storage
 apiVersion: v1
 kind: Pod
 metadata:
