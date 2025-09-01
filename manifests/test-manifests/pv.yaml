@@ -4,8 +4,9 @@ metadata:
   name: db-pv
 spec:
   capacity:
-    storage: 1Gi
+    storage: 128Mi
   storageClassName: manual
+  persistentVolumeReclaimPolicy: Retain
   accessModes:
     - ReadWriteOnce
   hostPath:

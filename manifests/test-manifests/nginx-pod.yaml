@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-app
-  namespace: ckad-prep
+  namespace: ckad
 spec:
   volumes:
     - name: nginx-run
