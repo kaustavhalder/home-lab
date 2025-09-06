@@ -12,6 +12,8 @@ spec:
     rollingUpdate:
       maxSurge: 10%
       maxUnavailable: 40%
+  # strategy:
+  #   type: Recreate
   selector:
     matchLabels:
       app: v1
