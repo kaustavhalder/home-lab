@@ -29,5 +29,7 @@ spec:
           name: nginx-cache
         - mountPath: /usr/local/nginx
           name: nginx-data
+      securityContext:
+        readOnlyRootFilesystem: true
       ports:
         - containerPort: 80
