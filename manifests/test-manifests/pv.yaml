@@ -9,6 +9,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: ./data/db
