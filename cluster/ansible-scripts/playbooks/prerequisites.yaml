@@ -1,0 +1,5 @@
+- name: Kubernets Prerequisites
+  hosts: all
+  become: true
+  tasks:
+    - name: Disable Swap
