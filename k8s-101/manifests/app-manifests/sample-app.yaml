@@ -5,10 +5,6 @@ metadata:
   labels:
     name: flask-app
 spec:
-  # volumes:
-  #   - name: "flask-data"
-  #     hostPath:
-  #       path: "./sample"
   containers:
   - name: flask-app
     image: kaustavhalder/tesst-py-app:1.0.2
@@ -28,9 +24,6 @@ spec:
       limits:
         memory: "256Mi"
         cpu: "1000m"
-    # volumeMounts:
-    #   - mountPath: "/data"
-    #     name: "flask-data"
     ports:
       - containerPort: 5000
         name: http
